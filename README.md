@@ -1,7 +1,7 @@
 # img-tags
 The application for assign tags to images.
 
-[![Screenshot](https://github.com/Z-13/img-tags/blob/master/info/screenshot_img_tags.jpg)]
+![Screenshot](https://github.com/Z-13/img-tags/blob/master/info/screenshot_img_tags.jpg)
 
 **The task:**
 
