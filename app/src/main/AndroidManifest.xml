@@ -1,0 +1,24 @@
+<manifest package="ru.z13.imgtags"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name="ru.z13.imgtags.App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${appName}"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MainTheme">
+        <activity android:name="ru.z13.imgtags.ui.activities.MainActivity"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustPan"
+                  android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
