@@ -1,0 +1,8 @@
+key store: keystore.jks
+store password: 1234567890
+
+key alias: release_key
+key password: 1234567890
+
+key alias: debug_key
+key password: 1234567890

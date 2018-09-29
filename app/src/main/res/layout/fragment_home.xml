@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:focusableInTouchMode="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <ImageButton
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/padding_8dp"
+                android:padding="@dimen/padding_12dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_alignParentEnd="true"
+                android:tint="@color/black"
+                app:srcCompat="@drawable/ic_search" />
+
+            <RelativeLayout
+                android:id="@+id/searchToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="invisible"
+                tools:visibility="visible">
+
+                <ImageButton
+                    android:id="@+id/navigateButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/padding_8dp"
+                    android:padding="@dimen/padding_12dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:tint="@color/colorAccent"
+                    app:srcCompat="@drawable/ic_arrow_back" />
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/navigateButton"
+                    app:queryHint="@string/search_hint"
+                    app:queryBackground="@android:color/transparent"
+                    app:iconifiedByDefault="false"
+                    app:searchIcon="@null"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/padding_8dp"
+        android:layout_marginEnd="@dimen/padding_8dp"
+        android:paddingBottom="@dimen/padding_64dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <Button
+        android:id="@+id/addButton"
+        style="@style/AccentRoundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:drawableStart="@drawable/ic_add"
+        android:drawablePadding="@dimen/padding_16dp"
+        android:layout_marginBottom="@dimen/padding_16dp"
+        android:text="@string/add_new_image"/>
+
+</android.support.design.widget.CoordinatorLayout>

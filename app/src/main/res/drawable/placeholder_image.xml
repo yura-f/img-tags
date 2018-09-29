@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/colorPrimaryDark"/>
+            <corners android:topLeftRadius="@dimen/padding_6dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_add_image"
+          android:bottom="4dp"
+          android:left="4dp"
+          android:right="4dp"
+          android:top="4dp">
+    </item>
+</layer-list>

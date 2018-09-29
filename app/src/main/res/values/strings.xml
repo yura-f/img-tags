@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ImgTags</string>
+    <string name="add_new_image">Add a new image</string>
+    <string name="hint_input_tags">Enter tags</string>
+    <string name="save">Save</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search tags</string>
+
+    <string name="empty_fragment">There is empty fragment!</string>
+</resources>
