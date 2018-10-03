@@ -10,8 +10,7 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.widget.Toast
 import com.arellomobile.mvp.presenter.InjectPresenter
-import ru.z13.imgtags.ui.widgets.YProgressDialog
-import ru.z13.imgtags.ui.common.BackButtonListener
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.z13.imgtags.App
@@ -20,6 +19,8 @@ import ru.z13.imgtags.mvp.presenters.MainActivityPresenter
 import ru.z13.imgtags.mvp.views.MainActivityView
 import ru.z13.imgtags.subnavigation.MainScreenNavigatorFactory
 import ru.z13.imgtags.subnavigation.NavigatorCallback
+import ru.z13.imgtags.ui.common.BackButtonListener
+import ru.z13.imgtags.ui.widgets.YProgressDialog
 import ru.z13.imgtags.utils.FilesUtils
 import ru.z13.imgtags.utils.YToast
 import javax.inject.Inject
@@ -33,8 +34,12 @@ class MainActivity : BaseActivity(), MainActivityView {
         const val RC_SELECT_IMAGE = 103
     }
 
+    @Inject
     @InjectPresenter
     lateinit var presenter: MainActivityPresenter
+
+    @ProvidePresenter
+    fun providePresenter() = presenter
 
     @Inject
     lateinit var navigatorHolder: NavigatorHolder

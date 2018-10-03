@@ -14,14 +14,8 @@ import javax.inject.Inject
  *
  * @author Yura Fedorchenko (www.android.z-13.ru)
  */
-open class BasePresenter<View:MvpView> : MvpPresenter<View>() {
+abstract class BasePresenter<View:MvpView> constructor(val router: MainRouter, val domainEvents: DomainEvents): MvpPresenter<View>() {
     private var compositeSubscription: CompositeDisposable = CompositeDisposable()
-
-    @Inject
-    lateinit var router: MainRouter
-
-    @Inject
-    lateinit var domainEvents: DomainEvents
 
     protected fun addSubscription(@NotNull subscription: Disposable){
         compositeSubscription.add(subscription)

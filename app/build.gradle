@@ -9,7 +9,7 @@ properties.load(project.file('build.properties').newDataInputStream())
 
 def versionMajor = 0
 def versionMinor = 1
-def versionPatch = 1
+def versionPatch = 2
 def buildNumber = System.getenv("BUILD_NUMBER") as Integer ?: 0
 
 Integer codeVersion = versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + buildNumber
@@ -113,6 +113,7 @@ android {
     testOptions {
         unitTests {
             returnDefaultValues = true
+            includeAndroidResources = true
         }
     }
 }
@@ -149,7 +150,7 @@ apply from: 'dependencies.gradle'
 dependencies {
     implementation supportLibs
     implementation rxJavaLibs
-    implementation moxyLibs
+    implementation moxyAppCompatLibs
     implementation ciceroneLibs
 
     implementation 'com.android.support:multidex:1.0.3'
@@ -181,13 +182,27 @@ dependencies {
 
     testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.3.1"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.3.1"
 }
 
 kapt {
     generateStubs = true
 }
 
-// Log out test results to console
-tasks.matching { it instanceof Test }.all {
-    testLogging.events = ["failed", "passed", "skipped"]
+clean {
+    delete rootProject.buildDir
 }
+
+tasks.matching { it instanceof Test }.all {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+// Log out test results to console
+//tasks.matching { it instanceof Test }.all {
+//    testLogging.events = ["failed", "passed", "skipped"]
+//}

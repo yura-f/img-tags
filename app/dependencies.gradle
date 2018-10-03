@@ -12,8 +12,8 @@ ext {
             cicerone          : '3.0.0'
     ]
 
-    mockito = [mockito: "org.mockito:mockito-core:2.8.9"]
-    junit = [junit: "junit:junit:4.12"]
+    mockitoKotlin = [mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1"]
+//    junit = [junit: "junit:junit:4.12"]
     restMock = [restMock: "com.github.andrzejchm.RESTMock:android:$versions.restMock"]
 
     supportDeps = [
@@ -32,9 +32,8 @@ ext {
             rxAndroid: "io.reactivex.rxjava2:rxandroid:2.1.0"
     ]
 
-    moxy = [
-            moxyMobile        : "com.arello-mobile:moxy:$versions.moxy",
-            moxyAppCompat     : "com.arello-mobile:moxy-app-compat:$versions.moxy",
+    moxyAppCompat = [
+            moxyAppCompat     : "com.arello-mobile:moxy-app-compat:$versions.moxy"
     ]
 
     cicerone = [
@@ -45,11 +44,11 @@ ext {
             harcrestCore       : "org.hamcrest:hamcrest-core:$versions.hamcrest",
             harmcrestLib       : "org.hamcrest:hamcrest-library:$versions.hamcrest",
             hamcrestIntegration: "org.hamcrest:hamcrest-integration:$versions.hamcrest",
-            robolectric        : "org.robolectric:robolectric:3.2.2",
+            robolectric        : "org.robolectric:robolectric:3.8",
             supportAnnotation  : "com.android.support:support-annotations:$versions.support",
             restMock           : "com.github.andrzejchm.RESTMock:android:$versions.restMock",
             assertj            : "com.squareup.assertj:assertj-android:1.1.1"
-    ] + junit + mockito + restMock
+    ] + mockitoKotlin + restMock
 
     androidTests = [
             espressoCore   : "com.android.support.test.espresso:espresso-core:$versions.espresso",
@@ -57,13 +56,13 @@ ext {
             espressoIntents: "com.android.support.test.espresso:espresso-intents:$versions.espresso",
             testRunner     : "com.android.support.test:runner:$versions.espressoRunner",
             testRules      : "com.android.support.test:rules:$versions.espressoRunner",
-    ] + mockito + restMock
+    ] + mockitoKotlin + restMock
 
     supportLibs = supportDeps.values()
     rxJavaLibs = rxJava.values()
     unitTestLibs = unitTest.values()
     androidTestsLibs = androidTests.values()
-    moxyLibs = moxy.values()
+    moxyAppCompatLibs = moxyAppCompat.values()
     ciceroneLibs = cicerone.values()
 
     leakCannary = "com.squareup.leakcanary:leakcanary-android:1.6.1"
