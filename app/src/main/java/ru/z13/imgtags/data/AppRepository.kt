@@ -6,8 +6,8 @@ import ru.z13.imgtags.data.datasource.RoomDataSource
 import ru.z13.imgtags.data.entity.database.ImageData
 import ru.z13.imgtags.data.entity.database.ImageTagJoinData
 import ru.z13.imgtags.data.entity.database.TagData
-import ru.z13.imgtags.domain.AppDomainEvents
-import ru.z13.imgtags.domain.AppDomainState
+import ru.z13.imgtags.domain.DomainEvents
+import ru.z13.imgtags.domain.MutableDomainState
 
 /**
  * Android Studio
@@ -16,8 +16,8 @@ import ru.z13.imgtags.domain.AppDomainState
  */
 class AppRepository(private val context: Context,
                     private val roomDataSource: RoomDataSource,
-                    private val domainState: AppDomainState,
-                    private val domainEvents: AppDomainEvents): Repository {
+                    private val domainState: MutableDomainState,
+                    private val domainEvents: DomainEvents): Repository {
     init {
     }
 

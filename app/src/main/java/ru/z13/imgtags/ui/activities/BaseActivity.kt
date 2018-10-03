@@ -7,4 +7,4 @@ import com.arellomobile.mvp.MvpAppCompatActivity
  *
  * @author Yura Fedorchenko (www.android.z-13.ru)
  */
-open class BaseActivity : MvpAppCompatActivity()
+abstract class BaseActivity : MvpAppCompatActivity()

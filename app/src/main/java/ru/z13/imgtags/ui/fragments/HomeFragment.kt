@@ -2,6 +2,7 @@ package ru.z13.imgtags.ui.fragments
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
@@ -12,10 +13,12 @@ import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.ViewGroup
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.FlowableEmitter
 import kotlinx.android.synthetic.main.fragment_home.*
+import ru.z13.imgtags.App
 import ru.z13.imgtags.R
 import ru.z13.imgtags.data.entity.database.ImageData
 import ru.z13.imgtags.mvp.presenters.HomePresenter
@@ -23,6 +26,7 @@ import ru.z13.imgtags.mvp.views.HomeView
 import ru.z13.imgtags.ui.adapters.ImageAdapter
 import ru.z13.imgtags.ui.common.BackButtonListener
 import ru.z13.imgtags.ui.widgets.AddImageBottomDialog
+import javax.inject.Inject
 
 
 /**
@@ -33,22 +37,28 @@ import ru.z13.imgtags.ui.widgets.AddImageBottomDialog
 class HomeFragment:BaseFragment(), HomeView, BackButtonListener {
     companion object {
         fun newInstance():HomeFragment{
-
             return HomeFragment()
         }
     }
 
+    @Inject
     @InjectPresenter
     lateinit var presenter: HomePresenter
+
+    @ProvidePresenter
+    fun providePresenter() = presenter
 
     private var adapter: ImageAdapter? = null
     private var addImageDialog: AddImageBottomDialog? = null
 
+    override fun onAttach(context: Context?) {
+        App.appComponent.inject(this)
+
+        super.onAttach(context)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

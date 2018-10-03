@@ -12,6 +12,15 @@ class App : MultiDexApplication() {
 
     companion object {
         @JvmStatic lateinit var appComponent: ApplicationComponent
+
+//        fun getAppComponent(): ApplicationComponent {
+//            return appComponent
+//        }
+//
+//        @VisibleForTesting
+//        fun setAppComponent(@NonNull component: ApplicationComponent) {
+//            appComponent = component
+//        }
     }
 
     override fun onCreate() {
@@ -31,4 +40,6 @@ class App : MultiDexApplication() {
                 .applicationModule(ApplicationModule(this))
                 .build()
     }
+
+
 }

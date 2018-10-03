@@ -1,12 +1,14 @@
 package ru.z13.imgtags.mvp.presenters
 
 import com.arellomobile.mvp.InjectViewState
-import ru.z13.imgtags.App
+import ru.z13.imgtags.domain.DomainEvents
 import ru.z13.imgtags.domain.DomainEvents.AppEvent
-import ru.z13.imgtags.domain.interactor.LoadStartLocalDataInteractor
-import ru.z13.imgtags.domain.interactor.SetSelectedImagePathInteractor
+import ru.z13.imgtags.domain.interactor.ImagesInteractor
+import ru.z13.imgtags.domain.interactor.StartAppInteractor
 import ru.z13.imgtags.enums.FragmentEnums
+import ru.z13.imgtags.mvp.utils.SchedulerProvider
 import ru.z13.imgtags.mvp.views.MainActivityView
+import ru.z13.imgtags.subnavigation.MainRouter
 import javax.inject.Inject
 
 /**
@@ -15,17 +17,11 @@ import javax.inject.Inject
  * @author Yura Fedorchenko (www.android.z-13.ru)
  */
 @InjectViewState
-class MainActivityPresenter: BasePresenter<MainActivityView>() {
-    init {
-        App.appComponent.inject(this)
-    }
-
-    @Inject
-    lateinit var setSelectedImagePathInteractor: SetSelectedImagePathInteractor
-
-    @Inject
-    lateinit var loadStartLocalDataInteractor: LoadStartLocalDataInteractor
-
+class MainActivityPresenter @Inject constructor(private val imagesInteractor: ImagesInteractor,
+                                                private val startAppInteractor: StartAppInteractor,
+                                                private val schedulerProvider: SchedulerProvider,
+                                                router: MainRouter,
+                                                domainEvents: DomainEvents): BasePresenter<MainActivityView>(router, domainEvents) {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
@@ -35,11 +31,14 @@ class MainActivityPresenter: BasePresenter<MainActivityView>() {
                 AppEvent.SHOW_PROGRESS -> viewState.showProgress(true)
                 AppEvent.HIDE_PROGRESS -> viewState.showProgress(false)
                 AppEvent.SHOW_IMAGE_PICKER -> viewState.showImagePicker()
-                else -> {}
+                null -> {}
             }
         })
 
-        addSubscription(loadStartLocalDataInteractor.prepare().subscribe())
+        addSubscription(startAppInteractor.loadLocalData()
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+                .subscribe())
 
         router.newRootScreen(FragmentEnums.HOME_FRAGMENT)
     }
@@ -57,6 +56,9 @@ class MainActivityPresenter: BasePresenter<MainActivityView>() {
     }
 
     fun selectedImageItem(path: String) {
-        addSubscription(setSelectedImagePathInteractor.prepare(path).subscribe())
+        addSubscription(imagesInteractor.setSelectedImagePath(path)
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+                .subscribe())
     }
 }

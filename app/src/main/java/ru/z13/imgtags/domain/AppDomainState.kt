@@ -8,7 +8,7 @@ import ru.z13.imgtags.domain.DomainEvents.DomainEvent
  *
  * @author Yura Fedorchenko (www.android.z-13.ru)
  */
-class AppDomainState(private val domainEvents: AppDomainEvents): DomainState {
+class AppDomainState(private val domainEvents: DomainEvents): MutableDomainState {
     private var images: List<ImageData> = listOf()
 
     private var selectedImagePath: String = ""
@@ -16,13 +16,13 @@ class AppDomainState(private val domainEvents: AppDomainEvents): DomainState {
     /**
      * IMAGES
      */
-    fun setImages(list: List<ImageData>){
+    override fun setImages(list: List<ImageData>){
         images = list
 
         notifyDomainEvent(DomainEvent.UPDATED_IMAGES)
     }
 
-    fun setSelectedImagePath(path: String) {
+    override fun setSelectedImagePath(path: String) {
         selectedImagePath = path
 
         notifyDomainEvent(DomainEvent.SELECTED_IMAGE_FROM_GALLERY)
