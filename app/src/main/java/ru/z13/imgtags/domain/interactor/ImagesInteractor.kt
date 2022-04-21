@@ -6,9 +6,7 @@ import ru.z13.imgtags.data.entity.database.ImageData
 import javax.inject.Inject
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class ImagesInteractor @Inject constructor(private val repository: Repository) {
     fun saveImage(param: ImageData): Completable {

@@ -7,9 +7,7 @@ import ru.terrakok.cicerone.android.SupportFragmentNavigator
 import ru.z13.imgtags.factories.FragmentFactory
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class MainScreenNavigator(fragmentManager: FragmentManager,
                           @IdRes private val containerId: Int,

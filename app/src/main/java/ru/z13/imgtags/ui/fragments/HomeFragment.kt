@@ -30,9 +30,7 @@ import javax.inject.Inject
 
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class HomeFragment:BaseFragment(), HomeView, BackButtonListener {
     companion object {

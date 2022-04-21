@@ -7,9 +7,7 @@ import ru.z13.imgtags.domain.DomainEvents.DomainEvent
 import ru.z13.imgtags.mvp.utils.SchedulerProvider
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class AppDomainEvents(private val schedulerProvider: SchedulerProvider) : DomainEvents {
     private val domainEventSubject: PublishSubject<DomainEvent> = PublishSubject.create<DomainEvent>()

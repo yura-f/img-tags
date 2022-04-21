@@ -7,9 +7,7 @@ import ru.z13.imgtags.data.datasource.RoomDataSource
 import javax.inject.Singleton
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 @Module
 class DataSourceModule {

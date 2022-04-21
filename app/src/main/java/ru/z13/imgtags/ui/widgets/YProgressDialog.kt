@@ -9,9 +9,7 @@ import ru.z13.imgtags.R
 
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class YProgressDialog(context: Context) : Dialog(context) {
 

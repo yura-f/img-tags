@@ -1,9 +1,7 @@
 package ru.z13.imgtags.enums
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class FragmentEnums {
     companion object {

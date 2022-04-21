@@ -5,9 +5,7 @@ import android.support.v4.app.FragmentManager
 import ru.terrakok.cicerone.Navigator
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class MainScreenNavigatorFactory {
     companion object {

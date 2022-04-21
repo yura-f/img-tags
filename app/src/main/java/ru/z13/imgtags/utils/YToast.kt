@@ -7,9 +7,7 @@ import android.widget.Toast
 import ru.z13.imgtags.BuildConfig
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class YToast {
     companion object {

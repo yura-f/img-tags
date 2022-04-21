@@ -14,9 +14,7 @@ import ru.z13.imgtags.data.entity.database.ImageData
 import ru.z13.imgtags.mvp.presenters.HomePresenter
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class ImageAdapter(val context: Context?, val presenter: HomePresenter): RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
     private var items: MutableList<ImageData> = mutableListOf()

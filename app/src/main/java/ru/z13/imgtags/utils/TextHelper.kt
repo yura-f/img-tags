@@ -5,9 +5,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class TextHelper {
     companion object {

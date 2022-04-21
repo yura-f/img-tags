@@ -3,9 +3,7 @@ package ru.z13.imgtags.domain
 import io.reactivex.Observable
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 interface DomainEvents {
     fun subscribeOnDomainEvent(): Observable<DomainEvent>

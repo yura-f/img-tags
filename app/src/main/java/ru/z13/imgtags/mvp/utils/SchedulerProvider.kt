@@ -3,9 +3,7 @@ package ru.z13.imgtags.mvp.utils
 import io.reactivex.Scheduler
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 interface SchedulerProvider {
     fun ui(): Scheduler

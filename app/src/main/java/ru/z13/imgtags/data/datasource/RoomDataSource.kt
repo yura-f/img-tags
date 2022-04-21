@@ -6,9 +6,7 @@ import javax.inject.Inject
 
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class RoomDataSource @Inject constructor(private val database: Database) {
     companion object {

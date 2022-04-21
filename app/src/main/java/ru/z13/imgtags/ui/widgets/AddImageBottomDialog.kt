@@ -16,9 +16,7 @@ import ru.z13.imgtags.utils.TextHelper
 
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class AddImageBottomDialog(context: Context, private val listener: OnAddImageBottomListener): BottomSheetDialog(context) {
     private var imagePath: String = ""

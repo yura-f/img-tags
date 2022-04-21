@@ -4,9 +4,7 @@ import android.content.Context
 import com.arellomobile.mvp.MvpAppCompatFragment
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 abstract class BaseFragment: MvpAppCompatFragment() {
     override fun onAttach(context: Context?) {

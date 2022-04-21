@@ -4,9 +4,7 @@ import ru.z13.imgtags.data.entity.database.ImageData
 import ru.z13.imgtags.domain.DomainEvents.DomainEvent
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class AppDomainState(private val domainEvents: DomainEvents): MutableDomainState {
     private var images: List<ImageData> = listOf()

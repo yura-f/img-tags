@@ -6,9 +6,7 @@ import ru.z13.imgtags.data.database.dao.*
 import ru.z13.imgtags.data.entity.database.*
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 @Database(entities = [
     ImageData::class,

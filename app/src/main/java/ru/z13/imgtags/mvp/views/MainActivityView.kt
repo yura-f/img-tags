@@ -7,9 +7,7 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import java.io.File
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface MainActivityView :MvpView {

@@ -11,9 +11,7 @@ import ru.z13.imgtags.mvp.utils.SchedulerProvider
 import javax.inject.Singleton
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 @Module
 class RepositoryModule {

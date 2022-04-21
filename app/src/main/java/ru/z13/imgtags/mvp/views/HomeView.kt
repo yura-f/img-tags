@@ -6,9 +6,7 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import ru.z13.imgtags.data.entity.database.ImageData
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface HomeView: MvpView {

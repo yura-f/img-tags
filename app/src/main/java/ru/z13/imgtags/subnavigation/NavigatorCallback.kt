@@ -1,9 +1,7 @@
 package ru.z13.imgtags.subnavigation
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 interface NavigatorCallback {
     fun showSystemMessage(message: String)

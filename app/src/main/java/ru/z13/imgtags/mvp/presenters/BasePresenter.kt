@@ -10,9 +10,7 @@ import ru.z13.imgtags.subnavigation.MainRouter
 import javax.inject.Inject
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 abstract class BasePresenter<View:MvpView> constructor(val router: MainRouter, val domainEvents: DomainEvents): MvpPresenter<View>() {
     private var compositeSubscription: CompositeDisposable = CompositeDisposable()

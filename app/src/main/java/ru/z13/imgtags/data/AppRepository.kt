@@ -10,9 +10,7 @@ import ru.z13.imgtags.domain.DomainEvents
 import ru.z13.imgtags.domain.MutableDomainState
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class AppRepository(private val context: Context,
                     private val roomDataSource: RoomDataSource,

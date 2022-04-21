@@ -6,9 +6,7 @@ import ru.z13.imgtags.ui.fragments.EmptyFragment
 import ru.z13.imgtags.ui.fragments.HomeFragment
 
 /**
- * Android Studio
- *
- * @author Yura Fedorchenko (www.android.z-13.ru)
+ * @author Yura F (yura-f.github.io)
  */
 class FragmentFactory {
     companion object {
